@@ -29,6 +29,7 @@ namespace WebFormsTraining
                            "Password: " + passwordTxt.Text;
 
             log.Info("Username: " + usernameTxt.Text + ", " + "Password : " + passwordTxt.Text );
+            log.Error("This is an error message");
             
 
 
