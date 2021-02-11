@@ -23,16 +23,11 @@ namespace WebFormsTraining
         protected void LoginBtn_Click(object sender, EventArgs e)
         {
            
-
-
             infoLbl.Text = "Username: " + usernameTxt.Text + "||" +
                            "Password: " + passwordTxt.Text;
 
             log.Info("Username: " + usernameTxt.Text + ", " + "Password : " + passwordTxt.Text );
-            log.Error("This is an error message");
             
-
-
         }
     }
 }
