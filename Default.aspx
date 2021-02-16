@@ -10,10 +10,14 @@
     <form id="clientSearch" runat="server" style="text-align: center">
         <div style="height:50px">
         </div>
+        <div style="text-align:right">
+            <p>USER:  <asp:TextBox Id="User" BorderStyle="None" runat="server"></asp:TextBox> </p>
+        </div>
         <div>
             <h1>Client Search Page</h1>
         </div>
-        <div style="height:50px"></div>
+        
+        <div style="height:25px"></div>
 
         <div>
         <asp:RequiredFieldValidator runat="server" id="reqClientId" controltovalidate="clientSrch" ForeColor="red" errormessage="Please enter a Client Id!" />

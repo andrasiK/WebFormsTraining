@@ -30,6 +30,10 @@ namespace WebFormsTraining
             //                   "Password: " + passwordTxt.Text;
             //
 
+            // Store Username in session
+            HttpContext.Current.Session["UserName"] = usernameTxt.Text; 
+
+
             // log the credentials into C:\Logs\RollingFileLog.txt
             log.Info("Username: " + usernameTxt.Text + ", " + "Password : " + passwordTxt.Text );
 

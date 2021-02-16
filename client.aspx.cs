@@ -11,9 +11,14 @@ namespace WebFormsTraining
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            // get userName stored in session
+            string userName = (string)Session["UserName"];
+            User.Text = userName;
+
             string clientID = Request.QueryString["clientID"];
             string language = Request.QueryString["language"];
-            clientDetailsLabel.Text = "Client ID:" + clientID + "||                     Selected Language:" + language;
+            clientDetailsLabel.Text = "Client ID: " + clientID + "|| Selected Language:" + language;
         }
     }
 }

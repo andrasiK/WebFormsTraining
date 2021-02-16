@@ -24,6 +24,15 @@ namespace WebFormsTraining
         protected global::System.Web.UI.HtmlControls.HtmlForm clientSearch;
 
         /// <summary>
+        /// User control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox User;
+
+        /// <summary>
         /// reqClientId control.
         /// </summary>
         /// <remarks>

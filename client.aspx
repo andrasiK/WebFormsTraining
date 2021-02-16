@@ -11,6 +11,9 @@
         <div>
              <a runat="server"   href="~/Default2" > Back to Home Screen </a>
         </div>
+        <div style="text-align:right">
+            <p>USER:  <asp:TextBox Id="User" BorderStyle="None" runat="server"></asp:TextBox> </p>
+        </div>
         <div style="text-align:center">
             <h1>Client Details Page</h1>
         </div>

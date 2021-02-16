@@ -11,7 +11,9 @@ namespace WebFormsTraining
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // get userName stored in session
+            string userName = (string)Session["UserName"];
+            User.Text = userName;
         }
 
         protected void SearchBtn_Click(object sender, EventArgs e)
