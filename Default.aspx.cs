@@ -19,7 +19,7 @@ namespace WebFormsTraining
 
             if (Page.IsValid)
             {
-                
+                Response.Redirect("Client.aspx?clientID=" + clientSrch.Text + "&language=" + countryList.Text);
             }
 
         }
