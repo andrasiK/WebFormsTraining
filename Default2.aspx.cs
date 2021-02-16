@@ -7,20 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace WebFormsTraining
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class _Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void SearchBtn_Click(object sender, EventArgs e)
-        {
-
-            if (Page.IsValid)
-            {
-                
-            }
 
         }
     }
