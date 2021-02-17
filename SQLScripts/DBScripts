@@ -1,0 +1,30 @@
+﻿Create DB:
+------------
+CREATE DATABASE webFormsBankingAppDb;
+
+
+Create Tables:
+----------------
+CREATE TABLE Users(
+UserID int NOT NULL PRIMARY KEY,
+UserName varchar(50),
+UserPassword varchar(50),
+);
+
+CREATE TABLE Client(
+ClientNumber int NOT NULL PRIMARY KEY,
+ClientName varchar(50),
+ClientType int,
+ClientOPU varchar(3),
+ClientAddress varchar(50),
+ClientPhone varchar(20),
+ClientEmail varchar(50),
+);
+
+CREATE TABLE Account(
+AccountNumber int NOT NULL PRIMARY KEY,
+AccountType varchar(50),
+AccountLanguage varchar(20),
+AccountBalance int,
+ClientNumber int FOREIGN KEY REFERENCES Client(ClientNumber)
+);
