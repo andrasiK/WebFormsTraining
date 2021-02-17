@@ -1,42 +1,40 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebFormsTraining._Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebFormsTraining.Default" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<!DOCTYPE html>
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Client search page</title>
+</head>
+<body style="width:800px; height:600px; margin:0px auto 0px auto;">
+    <form id="clientSearch" runat="server" style="text-align: center">
+        <div style="height:50px">
         </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
+        <div style="text-align:right">
+            <p>USER:  <asp:TextBox Id="User" BorderStyle="None" runat="server"></asp:TextBox> </p>
         </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
+        <div>
+            <h1>Client Search Page</h1>
         </div>
-    </div>
+        
+        <div style="height:25px"></div>
 
-</asp:Content>
+        <div>
+        <asp:RequiredFieldValidator runat="server" id="reqClientId" controltovalidate="clientSrch" ForeColor="red" errormessage="Please enter a Client Id!" />
+        <p>Client ID:  <asp:TextBox Id="clientSrch" runat="server"></asp:TextBox> </p>
+        
+        
+        <asp:RequiredFieldValidator runat="server" id="reqCountry" controltovalidate="countryList" ForeColor="red" errormessage="Please choose from the list!" />
+        <p style="text-align:left; margin-left:290px" >Language:        
+        <asp:DropDownList id="countryList" runat="server">
+                  <asp:ListItem Value="">  </asp:ListItem>
+                  <asp:ListItem Value="ENG"> ENG </asp:ListItem>
+                  <asp:ListItem Value="CZ"> CZ </asp:ListItem>
+        </asp:DropDownList>
+        </p>
+            <br /><br />
+        <p><asp:Button Id="searchBtn" Text="Search"  OnClick="SearchBtn_Click"  runat="server"></asp:Button></p>
+        </div>
+    </form>
+</body>
+</html>
