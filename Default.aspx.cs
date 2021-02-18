@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace WebFormsTraining
 {
@@ -21,7 +23,23 @@ namespace WebFormsTraining
 
             if (Page.IsValid)
             {
-                Response.Redirect("Client.aspx?clientID=" + clientSrch.Text + "&language=" + countryList.Text);
+                var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection"].ConnectionString;
+                var insertStatement = "INSERT into Client (ClientNumber, ClientName) values (@Number, @Name)";
+
+                using (var sqlConnection = new SqlConnection(connectionString)) 
+                {
+                    sqlConnection.Open();
+                    using (var sqlCommand = new SqlCommand(insertStatement, sqlConnection)) 
+                    {
+                        sqlCommand.Parameters.AddWithValue("Number", 1212);
+                        sqlCommand.Parameters.AddWithValue("Name", "Peter");
+                        sqlCommand.ExecuteNonQuery();
+                    }
+                
+                }
+
+
+                    Response.Redirect("Client.aspx?clientID=" + clientSrch.Text + "&language=" + countryList.Text);
             }
 
         }
