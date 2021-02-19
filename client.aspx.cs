@@ -16,9 +16,10 @@ namespace WebFormsTraining
             string userName = (string)Session["UserName"];
             User.Text = userName;
 
-            string clientID = Request.QueryString["clientID"];
-            string language = Request.QueryString["language"];
-            clientDetailsLabel.Text = "Client ID: " + clientID + "|| Selected Language:" + language;
+            // label is not needed anymore
+         //   string clientID = Request.QueryString["clientID"];
+         //   string language = Request.QueryString["language"];
+         //   clientDetailsLabel.Text = "Client ID: " + clientID + "|| Selected Language:" + language;
         }
     }
 }

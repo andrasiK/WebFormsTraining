@@ -19,6 +19,14 @@
         </div>
         <div style="height:50px">
 
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+
+
+            </asp:GridView>
+
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:bankingAppDbConnectionString %>" SelectCommand="SELECT DISTINCT * FROM [Account]" ProviderName="System.Data.SqlClient">
+            </asp:SqlDataSource>
+
         </div>
         <div style="text-align:center">
             <p><asp:Label Id="clientDetailsLabel" runat="server"></asp:Label></p>
