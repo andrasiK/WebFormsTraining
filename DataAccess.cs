@@ -61,6 +61,9 @@ namespace WebFormsTraining
                 {
                     DataSet ds = new DataSet();
                     dAdapter.Fill(ds);
+
+                    connection.Close();
+
                     return ds.Tables[0];
                 }
             

@@ -15,13 +15,12 @@
             <p>USER:  <asp:TextBox Id="User" BorderStyle="None" runat="server"></asp:TextBox> </p>
         </div>
         <div style="text-align:center">
-            <h1>Client Details Page<asp:GridView style="align-items:center" ID="GridView1" runat="server" Width="103px" Height="57px">
-            </asp:GridView>
-
-            </h1>
+            <h1>Client Details Page</h1>
         </div>
-        <div style="height:50px">
 
+        <div style="height:50px; align-content:center">
+            <asp:GridView HorizontalAlign="Center" ID="GridView1" runat="server" Width="103px" Height="57px">
+            </asp:GridView>
         </div>
         <div style="text-align:center">
             <p><asp:Label Id="clientDetailsLabel" runat="server"></asp:Label></p>
