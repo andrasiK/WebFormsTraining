@@ -24,10 +24,6 @@ namespace WebFormsTraining
 
             if (Page.IsValid)
             {
-            // access to DB and pass Client ID as a parameter
-                var db = new DataAccess();
-                db.GetAccount(clientSrch.Text);
-
                 Response.Redirect("Client.aspx?clientID=" + clientSrch.Text + "&language=" + countryList.Text);
             }
 
