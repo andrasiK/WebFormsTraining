@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 
+
 namespace WebFormsTraining
 {
     public partial class Default : System.Web.UI.Page
@@ -23,23 +24,11 @@ namespace WebFormsTraining
 
             if (Page.IsValid)
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection"].ConnectionString;
-                var insertStatement = "INSERT into Client (ClientNumber, ClientName) values (@Number, @Name)";
+            // access to DB and pass Client ID as a parameter
+                var db = new DataAccess();
+                db.GetAccount(clientSrch.Text);
 
-                using (var sqlConnection = new SqlConnection(connectionString)) 
-                {
-                    sqlConnection.Open();
-                    using (var sqlCommand = new SqlCommand(insertStatement, sqlConnection)) 
-                    {
-                        sqlCommand.Parameters.AddWithValue("Number", 1212);
-                        sqlCommand.Parameters.AddWithValue("Name", "Peter");
-                        sqlCommand.ExecuteNonQuery();
-                    }
-                
-                }
-
-
-                    Response.Redirect("Client.aspx?clientID=" + clientSrch.Text + "&language=" + countryList.Text);
+                Response.Redirect("Client.aspx?clientID=" + clientSrch.Text + "&language=" + countryList.Text);
             }
 
         }

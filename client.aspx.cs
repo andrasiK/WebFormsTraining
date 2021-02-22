@@ -8,7 +8,8 @@ using System.Web.UI.WebControls;
 namespace WebFormsTraining
 {
     public partial class client : System.Web.UI.Page
-    {
+    {  
+        string clientID;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,10 +17,12 @@ namespace WebFormsTraining
             string userName = (string)Session["UserName"];
             User.Text = userName;
 
+            clientID = Request.QueryString["clientID"];
+
+
             // label is not needed anymore
-         //   string clientID = Request.QueryString["clientID"];
-         //   string language = Request.QueryString["language"];
-         //   clientDetailsLabel.Text = "Client ID: " + clientID + "|| Selected Language:" + language;
+            //   string language = Request.QueryString["language"];
+            //   clientDetailsLabel.Text = "Client ID: " + clientID + "|| Selected Language:" + language;
         }
     }
 }
