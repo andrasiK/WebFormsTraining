@@ -42,17 +42,18 @@ namespace WebFormsTraining
         }
 
 
-        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Select$" + e.Row.RowIndex);
                 e.Row.Attributes["style"] = "cursor:pointer";
+                e.Row.ToolTip = "Click to select this row";
             }
         }
 
 
-        public void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        public void OnSelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GridView1.SelectedRow;
             string accNumb = row.Cells[0].Text;

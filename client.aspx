@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Client.aspx.cs" Inherits="WebFormsTraining.client" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Client.aspx.cs" Inherits="WebFormsTraining.client" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -19,7 +19,7 @@
         </div>
 
         <div style="height:50px; align-content:center">
-            <asp:GridView HorizontalAlign="Center" ID="GridView1" runat="server" Width="103px" Height="57px">
+            <asp:GridView HorizontalAlign="Center" ID="GridView1" runat="server" Width="103px" Height="57px" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="OnSelectedIndexChanged">
             </asp:GridView>
         </div>
         <div style="text-align:center">
