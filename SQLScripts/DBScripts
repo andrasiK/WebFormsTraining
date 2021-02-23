@@ -42,7 +42,29 @@ WHERE dbo.Account.ClientNumber = @clientNumber OR dbo.Account.AccountNumber = @a
 GO
 
 
+CREATE PROCEDURE insertAccount
+@AccountNumber int,
+@AccountType varchar(50),
+@AccountLanguage varchar (20),
+@AccountBalance int,
+@ClientNumber int
 
+AS
+
+INSERT INTO dbo.Account
+            (AccountNumber,
+			 AccountType,
+			 AccountLanguage,
+			 AccountBalance,
+			 ClientNumber)
+   VALUES  
+            (@AccountNumber,
+			 @AccountType,
+			 @AccountLanguage,
+			 @AccountBalance,
+			 @ClientNumber)
+
+GO
 
 
 
