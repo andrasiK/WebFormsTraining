@@ -41,7 +41,7 @@ namespace WebFormsTraining
             //   clientDetailsLabel.Text = "Client ID: " + clientID + "|| Selected Language:" + language;
         }
 
-
+        // attach an "onclick" event to the data rows
         protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -52,7 +52,7 @@ namespace WebFormsTraining
             }
         }
 
-
+        // event handler for click
         public void OnSelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GridView1.SelectedRow;

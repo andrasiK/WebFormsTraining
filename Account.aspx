@@ -8,6 +8,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div style="text-align:right">
+            <p>USER:  <asp:TextBox Id="User" ReadOnly="true" BorderStyle="None" runat="server"></asp:TextBox> </p>
+        </div>
         <div style="width:50%; margin:0 auto; text-align:center;">
             <h1>Account Detail Page</h1>
         </div>
