@@ -18,20 +18,27 @@ namespace WebFormsTraining
 
             accNmb = Request.QueryString["AccountNumber"];
 
-            if (accNmb.Length > 0)
+            if (accNmb != null)
             {
                 AccNumber.Attributes.Add("ReadOnly","ReadOnly");
+                AccNumber.BorderStyle = BorderStyle.None;
                 AccType.Attributes.Add("ReadOnly", "ReadOnly");
+                AccType.BorderStyle = BorderStyle.None;
                 AccLanguage.Attributes.Add("ReadOnly", "ReadOnly");
+                AccLanguage.BorderStyle = BorderStyle.None;
                 AccBalance.Attributes.Add("ReadOnly", "ReadOnly");
+                AccBalance.BorderStyle = BorderStyle.None;
+
+
+                var db = new DataAccess();
+                DataTable dt = db.GetAccountAccountNmb(accNmb);
+                AccNumber.Text = dt.Rows[0][0].ToString();
+                AccType.Text = dt.Rows[0][1].ToString();
+                AccLanguage.Text = dt.Rows[0][2].ToString();
+                AccBalance.Text = dt.Rows[0][3].ToString();
             }
 
-            var db = new DataAccess();
-            DataTable dt        = db.GetAccountAccountNmb(accNmb);
-            AccNumber.Text      = dt.Rows[0][0].ToString();
-            AccType.Text        = dt.Rows[0][1].ToString();
-            AccLanguage.Text    = dt.Rows[0][2].ToString();
-            AccBalance.Text     = dt.Rows[0][3].ToString();
+            
         }
     }
 }

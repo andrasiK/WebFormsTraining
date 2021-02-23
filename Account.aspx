@@ -15,10 +15,10 @@
             <h1>Account Detail Page</h1>
         </div>
         <div id="details" style="width:800px; margin:0 auto;">
-             <p>Account Number:  <asp:TextBox Id="AccNumber" BorderStyle="None" runat="server"></asp:TextBox> </p>
-             <p>Account Type:    <asp:TextBox Id="AccType" BorderStyle="None" runat="server"></asp:TextBox> </p>
-             <p>Account Language:<asp:TextBox Id="AccLanguage" BorderStyle="None" runat="server"></asp:TextBox> </p>
-             <p>Account Balance: <asp:TextBox Id="AccBalance" BorderStyle="None" runat="server"></asp:TextBox> </p>
+             <p>Account Number:  <asp:TextBox Id="AccNumber" runat="server"></asp:TextBox> </p>
+             <p>Account Type:    <asp:TextBox Id="AccType" runat="server"></asp:TextBox> </p>
+             <p>Account Language:<asp:TextBox Id="AccLanguage" runat="server"></asp:TextBox> </p>
+             <p>Account Balance: <asp:TextBox Id="AccBalance" runat="server"></asp:TextBox> </p>
         </div>
     </form>
 </body>

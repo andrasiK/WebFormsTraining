@@ -25,6 +25,9 @@
         <div style="text-align:center">
             <p><asp:Label Id="clientDetailsLabel" runat="server"></asp:Label></p>
         </div>
+        <div style="align-content:center">
+             <p><asp:Button Id="addAcc"  Text="Add New Account" PostBackUrl="~/Account.aspx"  runat="server"></asp:Button></p>
+        </div>
     </form>
 </body>
 </html>
