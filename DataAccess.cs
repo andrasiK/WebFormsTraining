@@ -104,7 +104,46 @@ namespace WebFormsTraining
 
         }
 
+        public int InsertNewAccount(string accNbr, string accType, string accLanguage, string accBalance, string clientNumber)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
+                    // call stored procedure with parameter
+                    var sqlCommand = new SqlCommand();
+                    sqlCommand.Connection = connection;
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                    sqlCommand.Parameters.Add("@AccountNumber", SqlDbType.Int);
+                    sqlCommand.Parameters["@AccountNumber"].Value = accNbr;
+                    sqlCommand.Parameters.Add("@AccountType", SqlDbType.VarChar);
+                    sqlCommand.Parameters["@AccountType"].Value = accType;
+                    sqlCommand.Parameters.Add("@AccountLanguage", SqlDbType.VarChar);
+                    sqlCommand.Parameters["@AccountLanguage"].Value = accLanguage;
+                    sqlCommand.Parameters.Add("@AccountBalance", SqlDbType.Int);
+                    sqlCommand.Parameters["@AccountBalance"].Value = accBalance;
+                    sqlCommand.Parameters.Add("@ClientNumber", SqlDbType.Int);
+                    sqlCommand.Parameters["@ClientNumber"].Value = clientNumber;
+
+                    sqlCommand.CommandText = "insertAccount";
+                    sqlCommand.ExecuteNonQuery();
+
+                    return 0;
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                return 1;
+            }
+            
+           
+
+        }
 
 
     }

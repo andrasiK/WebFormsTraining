@@ -19,6 +19,15 @@
              <p>Account Type:    <asp:TextBox Id="AccType" runat="server"></asp:TextBox> </p>
              <p>Account Language:<asp:TextBox Id="AccLanguage" runat="server"></asp:TextBox> </p>
              <p>Account Balance: <asp:TextBox Id="AccBalance" runat="server"></asp:TextBox> </p>
+             <p>Account Balance: <asp:TextBox Id="ClientId" runat="server"></asp:TextBox> </p>
+        </div>
+         <div style="align-content:center">
+             <p><asp:Button Id="createAcc"  Text="Create New Account" OnClick="CreateAcc_Click"  runat="server"></asp:Button></p>
+        </div>
+        <div></div>
+        <div></div>
+        <div style="text-align:center">
+            <p><asp:Label Id="errorLabel" runat="server"></asp:Label></p>
         </div>
     </form>
 </body>

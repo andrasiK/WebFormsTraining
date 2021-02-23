@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Threading;
 
 namespace WebFormsTraining
 {
@@ -36,9 +37,29 @@ namespace WebFormsTraining
                 AccType.Text = dt.Rows[0][1].ToString();
                 AccLanguage.Text = dt.Rows[0][2].ToString();
                 AccBalance.Text = dt.Rows[0][3].ToString();
+                ClientId.Text = dt.Rows[0][4].ToString();
+            }   
+        }
+
+        protected void CreateAcc_Click(object sender, EventArgs e)
+        {
+            // meghivom a metodust es parameterkent beadom a textbox adatokat
+
+            DataAccess dataAccess = new DataAccess();
+            var insertError = dataAccess.InsertNewAccount(AccNumber.Text, AccType.Text, AccLanguage.Text, AccBalance.Text, ClientId.Text);
+
+            if (insertError != 0)
+            {
+                errorLabel.Attributes.Add("style", "color:Red;");
+                errorLabel.Text = "Some error happened during the insertion to database!";
+            }
+            else
+            {
+                Response.Redirect("Client.aspx?clientID=" + ClientId.Text);
             }
 
-            
+
         }
+
     }
 }
