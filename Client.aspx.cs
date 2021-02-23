@@ -35,10 +35,40 @@ namespace WebFormsTraining
                 clientDetailsLabel.Text = "No Record Found";
             }
 
-
+            
             // this is not needed anymore
             //   string language = Request.QueryString["language"];
             //   clientDetailsLabel.Text = "Client ID: " + clientID + "|| Selected Language:" + language;
         }
+
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Select$" + e.Row.RowIndex);
+                e.Row.Attributes["style"] = "cursor:pointer";
+            }
+        }
+
+
+        public void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = GridView1.SelectedRow;
+            string accNumb = row.Cells[0].Text;
+            Response.Redirect("~/Account.aspx?AccountNumber=" + accNumb);
+        }
+
+        /*
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = GridView1.SelectedRow;
+            string id = row.Cells[0].Text;
+            Response.Redirect("Details.aspx?ID=" + id);
+        }
+        */
+
+      
+
     }
 }

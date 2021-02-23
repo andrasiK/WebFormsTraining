@@ -71,6 +71,39 @@ namespace WebFormsTraining
 
         }
 
+        // method to call 'getAccount' stored procedure with account number parameter 
+        public DataTable GetAccountAccountNmb(string accountNumber)
+        {
+            // establish connection
+            var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // call stored procedure with parameter
+                var sqlCommand = new SqlCommand();
+                sqlCommand.Connection = connection;
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add("@accountNumber", SqlDbType.Int);
+                sqlCommand.Parameters["@accountNumber"].Value = accountNumber;
+                sqlCommand.CommandText = "getAccount";
+
+
+                // return the result in a Data Table
+                using (SqlDataAdapter dAdapter = new SqlDataAdapter(sqlCommand))
+                {
+                    DataSet ds = new DataSet();
+                    dAdapter.Fill(ds);
+
+                    connection.Close();
+
+                    return ds.Tables[0];
+                }
+
+            }
+
+        }
+
 
 
 
