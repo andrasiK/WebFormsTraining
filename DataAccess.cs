@@ -130,8 +130,17 @@ namespace WebFormsTraining
                     sqlCommand.Parameters["@ClientNumber"].Value = clientNumber;
 
                     sqlCommand.CommandText = "insertAccount";
-                    sqlCommand.ExecuteNonQuery();
+                    try
+                    {
+                        sqlCommand.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                    catch (FormatException)
+                    {
+                        return 2;
+                    }
 
+                    
                     return 0;
 
                 }
@@ -141,8 +150,6 @@ namespace WebFormsTraining
                 return 1;
             }
             
-           
-
         }
 
 
