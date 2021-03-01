@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsTraining", "WebFormsTraining.csproj", "{189A6844-137C-4837-923B-3777F2A79791}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9C0A52A0-2174-4921-A8E8-3094D745DA57} = {9C0A52A0-2174-4921-A8E8-3094D745DA57}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "..\DataLayer\DataLayer.csproj", "{D82E289E-3067-4911-967E-1ABF1957492C}"
 EndProject
