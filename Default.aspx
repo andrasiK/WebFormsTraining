@@ -11,7 +11,7 @@
         <div style="height:50px">
         </div>
         <div style="text-align:right">
-            <p>USER:  <asp:TextBox Id="User" BorderStyle="None" runat="server"></asp:TextBox> </p>
+            <p>USER:  <asp:TextBox Id="User" ReadOnly="true" BorderStyle="None" runat="server"></asp:TextBox> </p>
         </div>
         <div>
             <h1>Client Search Page</h1>
