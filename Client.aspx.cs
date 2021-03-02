@@ -24,10 +24,10 @@ namespace WebFormsTraining
             // access to DB and pass Client ID as a parameter
             //  var db = new DataAccess();
 
-            WebFormsTraining.ServiceReference1.WebService1DbOperationsSoapClient webService1Db = new WebService1DbOperationsSoapClient();
+            WebFormsTraining.ServiceReference2.WebServiceDBSoapClient webService2Db = new ServiceReference2.WebServiceDBSoapClient();
 
 
-            DataTable dt = webService1Db.Get(clientID);
+            DataTable dt = webService2Db.Get(clientID);
 
             if (dt.Rows.Count > 0)
             {
