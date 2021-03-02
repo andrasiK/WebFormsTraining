@@ -55,11 +55,11 @@ namespace WebFormsTraining
 
         protected void CreateAcc_Click(object sender, EventArgs e)
         {
-           
 
-          //  DataAccess dataAccess = new DataAccess();
-        //    var insertError = dataAccess.InsertNewAccount(AccNumber.Text, AccType.Text, AccLanguage.Text, AccBalance.Text, ClientId.Text);
-        /*
+            ServiceReference2.WebServiceDBSoapClient webService2 = new ServiceReference2.WebServiceDBSoapClient();
+
+            var insertError = webService2.Insert(AccNumber.Text, AccType.Text, AccLanguage.Text, AccBalance.Text, ClientId.Text); 
+                 
             if (insertError == 1)
             {
                 errorLabel.Attributes.Add("style", "color:Red;");
@@ -75,7 +75,7 @@ namespace WebFormsTraining
                 Response.Redirect("Client.aspx?clientID=" + ClientId.Text);
             }
 
-            */
+            
         }
 
     }

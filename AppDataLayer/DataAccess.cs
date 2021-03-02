@@ -82,7 +82,7 @@ namespace AppDataLayer
         {
             try
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection"].ConnectionString;
+                var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection2"].ConnectionString;
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();

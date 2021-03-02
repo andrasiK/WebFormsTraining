@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebFormsTraining.ServiceReference1;
+using WebFormsTraining.ServiceReference2;
 
 namespace WebFormsTraining
 {
@@ -24,10 +24,10 @@ namespace WebFormsTraining
             // access to DB and pass Client ID as a parameter
             //  var db = new DataAccess();
 
-            WebFormsTraining.ServiceReference1.WebService1DbOperationsSoapClient webService1Db = new WebService1DbOperationsSoapClient();
+            WebFormsTraining.ServiceReference2.WebServiceDBSoapClient webService2Db = new ServiceReference2.WebServiceDBSoapClient();
 
-
-            DataTable dt = webService1Db.Get(clientID);
+            bool isAccountBasedSearch = false;
+            DataTable dt = webService2Db.Get(clientID, isAccountBasedSearch);
 
             if (dt.Rows.Count > 0)
             {
