@@ -68,12 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
-    <Content Include="WebService1DbOperations.asmx" />
+    <Content Include="WebServiceDB.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebService1DbOperations.asmx.cs">
-      <DependentUpon>WebService1DbOperations.asmx</DependentUpon>
+    <Compile Include="WebServiceDB.asmx.cs">
+      <DependentUpon>WebServiceDB.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -85,6 +85,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppDataLayer\AppDataLayer.csproj">
+      <Project>{7131e3e9-fded-43dd-80d8-4a8dbad1fe2b}</Project>
+      <Name>AppDataLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

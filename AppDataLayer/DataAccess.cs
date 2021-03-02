@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 
-namespace DataLayer
+namespace AppDataLayer
 {
     public class DataAccess
     {

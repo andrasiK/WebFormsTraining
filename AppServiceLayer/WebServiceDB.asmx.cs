@@ -1,31 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
-using DataLayer;
-using System.Data.SqlClient;
+using AppDataLayer;
+using System.Data;
 
-namespace ServiceLayer
+namespace AppServiceLayer
 {
     /// <summary>
-    /// Summary description for WebService1DbOperations
+    /// Summary description for WebServiceDB
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class WebService1DbOperations : System.Web.Services.WebService
+    public class WebServiceDB : System.Web.Services.WebService
     {
 
         [WebMethod]
         public string HelloWorld()
         {
-            return "This is my first Web Service";
+            return "Hello World";
         }
-
 
         [WebMethod]
         public DataTable Get(string s)
