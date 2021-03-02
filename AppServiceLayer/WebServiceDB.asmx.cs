@@ -26,18 +26,26 @@ namespace AppServiceLayer
         }
 
         [WebMethod]
-        public DataTable Get(string s)
+        public DataTable Get(string s, bool isAccountBasedSearch)
         {
-            DataTable dataTable = new DataTable();
-            DataAccess dataAccess = new DataAccess();
-            dataTable = dataAccess.GetAccount(s);
-            return dataTable;
+            if (isAccountBasedSearch == false)
+            {
+                DataTable dataTable = new DataTable();
+                DataAccess dataAccess = new DataAccess();
+                dataTable = dataAccess.GetAccount(s);
+                return dataTable;
+            }
+            else
+            {
+                DataTable dataTable = new DataTable();
+                DataAccess dataAccess = new DataAccess();
+                dataTable = dataAccess.GetAccountAccountNmb(s);
+                return dataTable;
+            }
+
         }
 
-        // !!!!
-        // will need an other GET() service or a decision inside the existing one, 
-        // for the case when the selection is based on the account number-
-
+        
         [WebMethod]
         public int Insert(string accNbr, string accType, string accLanguage, string accBalance, string clientNumber)
         {

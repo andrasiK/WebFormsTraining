@@ -25,10 +25,10 @@ namespace WebFormsTraining.ServiceReference2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Get", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataTable Get(string s);
+        System.Data.DataTable Get(string s, bool isAccountBasedSearch);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Get", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataTable> GetAsync(string s);
+        System.Threading.Tasks.Task<System.Data.DataTable> GetAsync(string s, bool isAccountBasedSearch);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Insert", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -73,12 +73,12 @@ namespace WebFormsTraining.ServiceReference2 {
             return base.Channel.HelloWorldAsync();
         }
         
-        public System.Data.DataTable Get(string s) {
-            return base.Channel.Get(s);
+        public System.Data.DataTable Get(string s, bool isAccountBasedSearch) {
+            return base.Channel.Get(s, isAccountBasedSearch);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> GetAsync(string s) {
-            return base.Channel.GetAsync(s);
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetAsync(string s, bool isAccountBasedSearch) {
+            return base.Channel.GetAsync(s, isAccountBasedSearch);
         }
         
         public int Insert(string accNbr, string accType, string accLanguage, string accBalance, string clientNumber) {
