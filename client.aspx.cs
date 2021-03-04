@@ -21,9 +21,7 @@ namespace WebFormsTraining
 
             clientID = Request.QueryString["clientID"];
 
-            // access to DB and pass Client ID as a parameter
-            //  var db = new DataAccess();
-
+            // instatiate proxy object and call web service
             WebFormsTraining.ServiceReference2.WebServiceDBSoapClient webService2Db = new ServiceReference2.WebServiceDBSoapClient();
 
             bool isAccountBasedSearch = false;
