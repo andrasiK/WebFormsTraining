@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Threading;
 
+
 namespace WebFormsTraining
 {
     public partial class Account : System.Web.UI.Page
@@ -21,6 +22,8 @@ namespace WebFormsTraining
 
             if (accNmb != null)
             {
+                bool isAccountBasedSearch = true;
+
                 AccNumber.Attributes.Add("ReadOnly","ReadOnly");
                 AccNumber.BorderStyle = BorderStyle.None;
                 AccType.Attributes.Add("ReadOnly", "ReadOnly");
@@ -34,14 +37,15 @@ namespace WebFormsTraining
 
                 createAcc.Visible = false;
 
-                var db = new DataAccess();
-                DataTable dt = db.GetAccountAccountNmb(accNmb);
+                WebFormsTraining.ServiceReference2.WebServiceDBSoapClient webService2 = new ServiceReference2.WebServiceDBSoapClient();
+
+                DataTable dt = webService2.Get(accNmb, isAccountBasedSearch);
                 AccNumber.Text = dt.Rows[0][0].ToString();
                 AccType.Text = dt.Rows[0][1].ToString();
                 AccLanguage.Text = dt.Rows[0][2].ToString();
                 AccBalance.Text = dt.Rows[0][3].ToString();
                 ClientId.Text = dt.Rows[0][4].ToString();
-
+        
 
               
             }
@@ -51,11 +55,11 @@ namespace WebFormsTraining
 
         protected void CreateAcc_Click(object sender, EventArgs e)
         {
-           
 
-            DataAccess dataAccess = new DataAccess();
-            var insertError = dataAccess.InsertNewAccount(AccNumber.Text, AccType.Text, AccLanguage.Text, AccBalance.Text, ClientId.Text);
+            ServiceReference2.WebServiceDBSoapClient webService2 = new ServiceReference2.WebServiceDBSoapClient();
 
+            var insertError = webService2.Insert(AccNumber.Text, AccType.Text, AccLanguage.Text, AccBalance.Text, ClientId.Text); 
+                 
             if (insertError == 1)
             {
                 errorLabel.Attributes.Add("style", "color:Red;");
@@ -71,7 +75,7 @@ namespace WebFormsTraining
                 Response.Redirect("Client.aspx?clientID=" + ClientId.Text);
             }
 
-
+            
         }
 
     }

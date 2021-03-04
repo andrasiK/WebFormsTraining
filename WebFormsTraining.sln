@@ -4,6 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsTraining", "WebFormsTraining.csproj", "{189A6844-137C-4837-923B-3777F2A79791}"
+	ProjectSection(ProjectDependencies) = postProject
+		{10E91A8A-01A4-42A0-A719-48706D69BE53} = {10E91A8A-01A4-42A0-A719-48706D69BE53}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppServiceLayer", "AppServiceLayer\AppServiceLayer.csproj", "{10E91A8A-01A4-42A0-A719-48706D69BE53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDataLayer", "AppDataLayer\AppDataLayer.csproj", "{7131E3E9-FDED-43DD-80D8-4A8DBAD1FE2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,14 @@ Global
 		{189A6844-137C-4837-923B-3777F2A79791}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{189A6844-137C-4837-923B-3777F2A79791}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{189A6844-137C-4837-923B-3777F2A79791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10E91A8A-01A4-42A0-A719-48706D69BE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E91A8A-01A4-42A0-A719-48706D69BE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E91A8A-01A4-42A0-A719-48706D69BE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E91A8A-01A4-42A0-A719-48706D69BE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7131E3E9-FDED-43DD-80D8-4A8DBAD1FE2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7131E3E9-FDED-43DD-80D8-4A8DBAD1FE2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7131E3E9-FDED-43DD-80D8-4A8DBAD1FE2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7131E3E9-FDED-43DD-80D8-4A8DBAD1FE2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,41 +8,15 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 
-namespace WebFormsTraining
+namespace AppDataLayer
 {
     public class DataAccess
     {
-
-
-        // THIS METHOD WAS JUST FOR TESTING REASONS
-        /*
-          public void InsertToDB( string clientID)
-          {
-              var clientToSearch = clientID;
-
-
-              var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection"].ConnectionString;
-              var insertStatement = "INSERT into Client (ClientNumber, ClientName) values (@Number, @Name)";
-
-              using (var sqlConnection = new SqlConnection(connectionString))
-              {
-                  sqlConnection.Open();
-                  using (var sqlCommand = new SqlCommand(insertStatement, sqlConnection))
-                  {
-                      sqlCommand.Parameters.AddWithValue("Number", 1232);
-                      sqlCommand.Parameters.AddWithValue("Name", "Peter");
-                      sqlCommand.ExecuteNonQuery();
-                  }
-
-              }
-          }
-                    */
-
-
+     // Get account details based on client ID
         public DataTable GetAccount(string clientId)
         {
           // establish connection
-            var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection2"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -75,7 +49,7 @@ namespace WebFormsTraining
         public DataTable GetAccountAccountNmb(string accountNumber)
         {
             // establish connection
-            var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection2"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -108,7 +82,7 @@ namespace WebFormsTraining
         {
             try
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection"].ConnectionString;
+                var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection2"].ConnectionString;
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
