@@ -19,7 +19,15 @@
         </div>
 
         <div style="height:50px; align-content:center; height:200px">
-            <asp:GridView HorizontalAlign="Center" ID="GridView1" runat="server" Width="103px" Height="57px" OnRowDataBound="OnRowDataBound" OnSelectedIndexChanged="OnSelectedIndexChanged">
+            <asp:GridView HorizontalAlign="Center" ID="GridView1" runat="server" Width="103px" Height="57px" OnRowDataBound="OnRowDataBound" 
+                          OnSelectedIndexChanged ="OnSelectedIndexChanged" AutoGenerateColumns ="false">
+            <Columns>
+              <asp:BoundField DataField="AccountNumber" HeaderText="Account Number"/>
+              <asp:BoundField DataField="AccountType" HeaderText="Account Type" />
+              <asp:BoundField DataField="AccountLanguage" HeaderText="Account Language"/>
+              <asp:BoundField DataField="AccountBalance" HeaderText="Account Balance" />
+              <asp:BoundField DataField="ClientNumber" HeaderText="Client Number" />
+            </Columns>
             </asp:GridView>
         </div>
         <div style="text-align:center">
