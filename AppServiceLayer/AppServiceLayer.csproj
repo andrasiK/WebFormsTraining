@@ -91,6 +91,10 @@
       <Project>{7131e3e9-fded-43dd-80d8-4a8dbad1fe2b}</Project>
       <Name>AppDataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Wrapper\Wrapper.csproj">
+      <Project>{506e7b44-26bc-447d-bb8b-be7e9a344b5f}</Project>
+      <Name>Wrapper</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

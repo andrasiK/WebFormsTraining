@@ -39,15 +39,15 @@ namespace WebFormsTraining
 
                 WebFormsTraining.ServiceReference2.WebServiceDBSoapClient webService2 = new ServiceReference2.WebServiceDBSoapClient();
 
-                DataTable dt = webService2.Get(accNmb, isAccountBasedSearch);
-                AccNumber.Text = dt.Rows[0][0].ToString();
-                AccType.Text = dt.Rows[0][1].ToString();
-                AccLanguage.Text = dt.Rows[0][2].ToString();
-                AccBalance.Text = dt.Rows[0][3].ToString();
-                ClientId.Text = dt.Rows[0][4].ToString();
+                List<ServiceReference2.Account> account = new List<ServiceReference2.Account>();
+                account = webService2.Get(accNmb, isAccountBasedSearch).ToList();
+                
+                AccNumber.Text = account[0].AccountNumber.ToString();
+                AccType.Text = account[0].AccountType;
+                AccLanguage.Text = account[0].AccountLanguage;
+                AccBalance.Text = account[0].AccountBalance.ToString();
+                ClientId.Text = account[0].ClientNumber.ToString();
         
-
-              
             }
 
             

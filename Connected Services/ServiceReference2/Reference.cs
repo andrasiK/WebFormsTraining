@@ -9,33 +9,357 @@
 //------------------------------------------------------------------------------
 
 namespace WebFormsTraining.ServiceReference2 {
-    using System.Data;
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Account", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Account : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int AccountNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AccountTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AccountLanguageField;
+        
+        private int AccountBalanceField;
+        
+        private int ClientNumberField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int AccountNumber {
+            get {
+                return this.AccountNumberField;
+            }
+            set {
+                if ((this.AccountNumberField.Equals(value) != true)) {
+                    this.AccountNumberField = value;
+                    this.RaisePropertyChanged("AccountNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string AccountType {
+            get {
+                return this.AccountTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccountTypeField, value) != true)) {
+                    this.AccountTypeField = value;
+                    this.RaisePropertyChanged("AccountType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string AccountLanguage {
+            get {
+                return this.AccountLanguageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccountLanguageField, value) != true)) {
+                    this.AccountLanguageField = value;
+                    this.RaisePropertyChanged("AccountLanguage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int AccountBalance {
+            get {
+                return this.AccountBalanceField;
+            }
+            set {
+                if ((this.AccountBalanceField.Equals(value) != true)) {
+                    this.AccountBalanceField = value;
+                    this.RaisePropertyChanged("AccountBalance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int ClientNumber {
+            get {
+                return this.ClientNumberField;
+            }
+            set {
+                if ((this.ClientNumberField.Equals(value) != true)) {
+                    this.ClientNumberField = value;
+                    this.RaisePropertyChanged("ClientNumber");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.WebServiceDBSoap")]
     public interface WebServiceDBSoap {
         
+        // CODEGEN: Generating message contract since element name HelloWorldResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string HelloWorld();
+        WebFormsTraining.ServiceReference2.HelloWorldResponse HelloWorld(WebFormsTraining.ServiceReference2.HelloWorldRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> HelloWorldAsync();
+        System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.HelloWorldResponse> HelloWorldAsync(WebFormsTraining.ServiceReference2.HelloWorldRequest request);
+        
+        // CODEGEN: Generating message contract since element name s from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Get", ReplyAction="*")]
+        WebFormsTraining.ServiceReference2.GetResponse Get(WebFormsTraining.ServiceReference2.GetRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Get", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataTable Get(string s, bool isAccountBasedSearch);
+        System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.GetResponse> GetAsync(WebFormsTraining.ServiceReference2.GetRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Get", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataTable> GetAsync(string s, bool isAccountBasedSearch);
+        // CODEGEN: Generating message contract since element name accNbr from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Insert", ReplyAction="*")]
+        WebFormsTraining.ServiceReference2.InsertResponse Insert(WebFormsTraining.ServiceReference2.InsertRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Insert", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int Insert(string accNbr, string accType, string accLanguage, string accBalance, string clientNumber);
+        System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.InsertResponse> InsertAsync(WebFormsTraining.ServiceReference2.InsertRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class HelloWorldRequest {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Insert", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> InsertAsync(string accNbr, string accType, string accLanguage, string accBalance, string clientNumber);
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
+        public WebFormsTraining.ServiceReference2.HelloWorldRequestBody Body;
+        
+        public HelloWorldRequest() {
+        }
+        
+        public HelloWorldRequest(WebFormsTraining.ServiceReference2.HelloWorldRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class HelloWorldRequestBody {
+        
+        public HelloWorldRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class HelloWorldResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebFormsTraining.ServiceReference2.HelloWorldResponseBody Body;
+        
+        public HelloWorldResponse() {
+        }
+        
+        public HelloWorldResponse(WebFormsTraining.ServiceReference2.HelloWorldResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class HelloWorldResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string HelloWorldResult;
+        
+        public HelloWorldResponseBody() {
+        }
+        
+        public HelloWorldResponseBody(string HelloWorldResult) {
+            this.HelloWorldResult = HelloWorldResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Get", Namespace="http://tempuri.org/", Order=0)]
+        public WebFormsTraining.ServiceReference2.GetRequestBody Body;
+        
+        public GetRequest() {
+        }
+        
+        public GetRequest(WebFormsTraining.ServiceReference2.GetRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string s;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public bool isAccountBasedSearch;
+        
+        public GetRequestBody() {
+        }
+        
+        public GetRequestBody(string s, bool isAccountBasedSearch) {
+            this.s = s;
+            this.isAccountBasedSearch = isAccountBasedSearch;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebFormsTraining.ServiceReference2.GetResponseBody Body;
+        
+        public GetResponse() {
+        }
+        
+        public GetResponse(WebFormsTraining.ServiceReference2.GetResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebFormsTraining.ServiceReference2.Account[] GetResult;
+        
+        public GetResponseBody() {
+        }
+        
+        public GetResponseBody(WebFormsTraining.ServiceReference2.Account[] GetResult) {
+            this.GetResult = GetResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Insert", Namespace="http://tempuri.org/", Order=0)]
+        public WebFormsTraining.ServiceReference2.InsertRequestBody Body;
+        
+        public InsertRequest() {
+        }
+        
+        public InsertRequest(WebFormsTraining.ServiceReference2.InsertRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string accNbr;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string accType;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string accLanguage;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string accBalance;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string clientNumber;
+        
+        public InsertRequestBody() {
+        }
+        
+        public InsertRequestBody(string accNbr, string accType, string accLanguage, string accBalance, string clientNumber) {
+            this.accNbr = accNbr;
+            this.accType = accType;
+            this.accLanguage = accLanguage;
+            this.accBalance = accBalance;
+            this.clientNumber = clientNumber;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebFormsTraining.ServiceReference2.InsertResponseBody Body;
+        
+        public InsertResponse() {
+        }
+        
+        public InsertResponse(WebFormsTraining.ServiceReference2.InsertResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int InsertResult;
+        
+        public InsertResponseBody() {
+        }
+        
+        public InsertResponseBody(int InsertResult) {
+            this.InsertResult = InsertResult;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -65,28 +389,87 @@ namespace WebFormsTraining.ServiceReference2 {
                 base(binding, remoteAddress) {
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebFormsTraining.ServiceReference2.HelloWorldResponse WebFormsTraining.ServiceReference2.WebServiceDBSoap.HelloWorld(WebFormsTraining.ServiceReference2.HelloWorldRequest request) {
+            return base.Channel.HelloWorld(request);
+        }
+        
         public string HelloWorld() {
-            return base.Channel.HelloWorld();
+            WebFormsTraining.ServiceReference2.HelloWorldRequest inValue = new WebFormsTraining.ServiceReference2.HelloWorldRequest();
+            inValue.Body = new WebFormsTraining.ServiceReference2.HelloWorldRequestBody();
+            WebFormsTraining.ServiceReference2.HelloWorldResponse retVal = ((WebFormsTraining.ServiceReference2.WebServiceDBSoap)(this)).HelloWorld(inValue);
+            return retVal.Body.HelloWorldResult;
         }
         
-        public System.Threading.Tasks.Task<string> HelloWorldAsync() {
-            return base.Channel.HelloWorldAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.HelloWorldResponse> WebFormsTraining.ServiceReference2.WebServiceDBSoap.HelloWorldAsync(WebFormsTraining.ServiceReference2.HelloWorldRequest request) {
+            return base.Channel.HelloWorldAsync(request);
         }
         
-        public System.Data.DataTable Get(string s, bool isAccountBasedSearch) {
-            return base.Channel.Get(s, isAccountBasedSearch);
+        public System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.HelloWorldResponse> HelloWorldAsync() {
+            WebFormsTraining.ServiceReference2.HelloWorldRequest inValue = new WebFormsTraining.ServiceReference2.HelloWorldRequest();
+            inValue.Body = new WebFormsTraining.ServiceReference2.HelloWorldRequestBody();
+            return ((WebFormsTraining.ServiceReference2.WebServiceDBSoap)(this)).HelloWorldAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> GetAsync(string s, bool isAccountBasedSearch) {
-            return base.Channel.GetAsync(s, isAccountBasedSearch);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebFormsTraining.ServiceReference2.GetResponse WebFormsTraining.ServiceReference2.WebServiceDBSoap.Get(WebFormsTraining.ServiceReference2.GetRequest request) {
+            return base.Channel.Get(request);
+        }
+        
+        public WebFormsTraining.ServiceReference2.Account[] Get(string s, bool isAccountBasedSearch) {
+            WebFormsTraining.ServiceReference2.GetRequest inValue = new WebFormsTraining.ServiceReference2.GetRequest();
+            inValue.Body = new WebFormsTraining.ServiceReference2.GetRequestBody();
+            inValue.Body.s = s;
+            inValue.Body.isAccountBasedSearch = isAccountBasedSearch;
+            WebFormsTraining.ServiceReference2.GetResponse retVal = ((WebFormsTraining.ServiceReference2.WebServiceDBSoap)(this)).Get(inValue);
+            return retVal.Body.GetResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.GetResponse> WebFormsTraining.ServiceReference2.WebServiceDBSoap.GetAsync(WebFormsTraining.ServiceReference2.GetRequest request) {
+            return base.Channel.GetAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.GetResponse> GetAsync(string s, bool isAccountBasedSearch) {
+            WebFormsTraining.ServiceReference2.GetRequest inValue = new WebFormsTraining.ServiceReference2.GetRequest();
+            inValue.Body = new WebFormsTraining.ServiceReference2.GetRequestBody();
+            inValue.Body.s = s;
+            inValue.Body.isAccountBasedSearch = isAccountBasedSearch;
+            return ((WebFormsTraining.ServiceReference2.WebServiceDBSoap)(this)).GetAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebFormsTraining.ServiceReference2.InsertResponse WebFormsTraining.ServiceReference2.WebServiceDBSoap.Insert(WebFormsTraining.ServiceReference2.InsertRequest request) {
+            return base.Channel.Insert(request);
         }
         
         public int Insert(string accNbr, string accType, string accLanguage, string accBalance, string clientNumber) {
-            return base.Channel.Insert(accNbr, accType, accLanguage, accBalance, clientNumber);
+            WebFormsTraining.ServiceReference2.InsertRequest inValue = new WebFormsTraining.ServiceReference2.InsertRequest();
+            inValue.Body = new WebFormsTraining.ServiceReference2.InsertRequestBody();
+            inValue.Body.accNbr = accNbr;
+            inValue.Body.accType = accType;
+            inValue.Body.accLanguage = accLanguage;
+            inValue.Body.accBalance = accBalance;
+            inValue.Body.clientNumber = clientNumber;
+            WebFormsTraining.ServiceReference2.InsertResponse retVal = ((WebFormsTraining.ServiceReference2.WebServiceDBSoap)(this)).Insert(inValue);
+            return retVal.Body.InsertResult;
         }
         
-        public System.Threading.Tasks.Task<int> InsertAsync(string accNbr, string accType, string accLanguage, string accBalance, string clientNumber) {
-            return base.Channel.InsertAsync(accNbr, accType, accLanguage, accBalance, clientNumber);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.InsertResponse> WebFormsTraining.ServiceReference2.WebServiceDBSoap.InsertAsync(WebFormsTraining.ServiceReference2.InsertRequest request) {
+            return base.Channel.InsertAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.InsertResponse> InsertAsync(string accNbr, string accType, string accLanguage, string accBalance, string clientNumber) {
+            WebFormsTraining.ServiceReference2.InsertRequest inValue = new WebFormsTraining.ServiceReference2.InsertRequest();
+            inValue.Body = new WebFormsTraining.ServiceReference2.InsertRequestBody();
+            inValue.Body.accNbr = accNbr;
+            inValue.Body.accType = accType;
+            inValue.Body.accLanguage = accLanguage;
+            inValue.Body.accBalance = accBalance;
+            inValue.Body.clientNumber = clientNumber;
+            return ((WebFormsTraining.ServiceReference2.WebServiceDBSoap)(this)).InsertAsync(inValue);
         }
     }
 }

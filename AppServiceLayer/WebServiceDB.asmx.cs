@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Services;
 using AppDataLayer;
 using System.Data;
+using Wrapper;
+
 
 namespace AppServiceLayer
 {
@@ -26,21 +28,26 @@ namespace AppServiceLayer
         }
 
         [WebMethod]
-        public DataTable Get(string s, bool isAccountBasedSearch)
+        public List<Account> Get(string s, bool isAccountBasedSearch)
         {
             if (isAccountBasedSearch == false)
             {
-                DataTable dataTable = new DataTable();
-                DataAccess dataAccess = new DataAccess();
-                dataTable = dataAccess.GetAccount(s);
-                return dataTable;
+
+                Account account = new Account();
+                List<Account> accountList = new List<Account>();
+
+                accountList = account.GetAccount(s);
+                
+                return accountList;
             }
             else
             {
-                DataTable dataTable = new DataTable();
-                DataAccess dataAccess = new DataAccess();
-                dataTable = dataAccess.GetAccountAccountNmb(s);
-                return dataTable;
+                Account account = new Account();
+                List<Account> accountList = new List<Account>();
+
+                accountList = account.GetAccountAccountNmb(s);
+
+                return accountList;
             }
 
         }
