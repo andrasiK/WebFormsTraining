@@ -33,19 +33,19 @@ namespace AppServiceLayer
             if (isAccountBasedSearch == false)
             {
 
-                Account account = new Account();
+                DataAccess dataAccess = new DataAccess();
                 List<Account> accountList = new List<Account>();
 
-                accountList = account.GetAccount(s);
+                accountList = dataAccess.GetAccount(s);
                 
                 return accountList;
             }
             else
             {
-                Account account = new Account();
+                DataAccess dataAccess = new DataAccess();
                 List<Account> accountList = new List<Account>();
 
-                accountList = account.GetAccountAccountNmb(s);
+                accountList = dataAccess.GetAccountAccountNmb(s);
 
                 return accountList;
             }

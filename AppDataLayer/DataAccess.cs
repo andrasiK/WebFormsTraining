@@ -7,21 +7,25 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using Wrapper;
+
 
 namespace AppDataLayer
 {
-    public class DataAccess
+
+public class DataAccess
     {
-     // Get account details based on client ID
-        public DataTable GetAccount(string clientId)
+
+        // Get account details based on client ID
+        public List<Account> GetAccount(string clientId)
         {
-          // establish connection
+            // establish connection
             string connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection2"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-             // call stored procedure with parameter
+                // call stored procedure with parameter
                 var sqlCommand = new SqlCommand();
                 sqlCommand.Connection = connection;
                 sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -30,23 +34,37 @@ namespace AppDataLayer
                 sqlCommand.CommandText = "getAccount";
 
 
-              // return the result in a Data Table
+                //  map the data table values to an Account type list and return it
                 using (SqlDataAdapter dAdapter = new SqlDataAdapter(sqlCommand))
                 {
                     DataSet ds = new DataSet();
                     dAdapter.Fill(ds);
+                    DataTable dt = ds.Tables[0];
+
+                    List<Account> accountList = new List<Account>();
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        Account account = new Account();
+                        account.AccountNumber = Convert.ToInt32(dt.Rows[i]["AccountNumber"]);
+                        account.AccountType = dt.Rows[i]["AccountType"].ToString();
+                        account.AccountLanguage = dt.Rows[i]["AccountLanguage"].ToString();
+                        account.AccountBalance = Convert.ToInt32(dt.Rows[i]["AccountBalance"]);
+                        account.ClientNumber = Convert.ToInt32(dt.Rows[i]["ClientNumber"]);
+                        accountList.Add(account);
+                    }
 
                     connection.Close();
 
-                    return ds.Tables[0];
+                    return accountList;
                 }
-            
+
             }
 
         }
 
         // method to call 'getAccount' stored procedure with account number parameter 
-        public DataTable GetAccountAccountNmb(string accountNumber)
+        public List<Account> GetAccountAccountNmb(string accountNumber)
         {
             // establish connection
             var connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection2"].ConnectionString;
@@ -69,9 +87,20 @@ namespace AppDataLayer
                     DataSet ds = new DataSet();
                     dAdapter.Fill(ds);
 
+                    DataTable dt = ds.Tables[0];
+                    Account account = new Account();
+                    List<Account> accountList = new List<Account>();
+
+                    account.AccountNumber = Convert.ToInt32(dt.Rows[0]["AccountNumber"]);
+                    account.AccountType = dt.Rows[0]["AccountType"].ToString();
+                    account.AccountLanguage = dt.Rows[0]["AccountLanguage"].ToString();
+                    account.AccountBalance = Convert.ToInt32(dt.Rows[0]["AccountBalance"]);
+                    account.ClientNumber = Convert.ToInt32(dt.Rows[0]["ClientNumber"]);
+                    accountList.Add(account);
+
                     connection.Close();
 
-                    return ds.Tables[0];
+                    return accountList;
                 }
 
             }
@@ -114,7 +143,7 @@ namespace AppDataLayer
                         return 2;
                     }
 
-                    
+
                     return 0;
 
                 }
@@ -123,9 +152,13 @@ namespace AppDataLayer
             {
                 return 1;
             }
-            
+
         }
 
 
     }
+
+
+
+
 }

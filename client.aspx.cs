@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebFormsTraining.ServiceReference2;
+using Wrapper;
 
 namespace WebFormsTraining
 {
@@ -25,12 +26,15 @@ namespace WebFormsTraining
             WebFormsTraining.ServiceReference2.WebServiceDBSoapClient webService2Db = new ServiceReference2.WebServiceDBSoapClient();
 
             bool isAccountBasedSearch = false;
-            DataTable dt = webService2Db.Get(clientID, isAccountBasedSearch);
+            List<ServiceReference2.Account> accountList = new List<ServiceReference2.Account>();
+            accountList = webService2Db.Get(clientID, isAccountBasedSearch).ToList();
+            
 
-            if (dt.Rows.Count > 0)
+            if (accountList.Count > 0)
             {
-                GridView1.DataSource = dt;
+                GridView1.DataSource = accountList;
                 GridView1.DataBind();
+                
             }
             else
             {
