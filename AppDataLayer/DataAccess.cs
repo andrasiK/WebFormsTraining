@@ -13,7 +13,7 @@ using Wrapper;
 namespace AppDataLayer
 {
 
-public class DataAccess
+    public class DataAccess
     {
 
         // Get account details based on client ID
@@ -156,9 +156,53 @@ public class DataAccess
         }
 
 
+
+        public List<Message> GetMessages()
+        {
+            // establish connection
+            string connectionString = ConfigurationManager.ConnectionStrings["bankingAppDbConnection2"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // call stored procedure with parameter
+                var sqlCommand = new SqlCommand();
+                sqlCommand.Connection = connection;
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = "getMessages";
+
+
+                //  map the data table values to a 'Message' type list and return it
+                using (SqlDataAdapter dAdapter = new SqlDataAdapter(sqlCommand))
+                {
+                    DataSet ds = new DataSet();
+                    dAdapter.Fill(ds);
+                    DataTable dt = ds.Tables[0];
+
+                    List<Message> messageList = new List<Message>();
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        Message message = new Message();
+
+                        message.MessageId = Convert.ToInt32(dt.Rows[i]["MESSAGEID"]);
+                        message.MessageLanguage = dt.Rows[i]["MESSAGELANGUAGE"].ToString();
+                        message.MessageText = dt.Rows[i]["MESSAGETEXT"].ToString();
+
+                        messageList.Add(message);
+                    }
+
+                    connection.Close();
+
+                    return messageList;
+                }
+
+            }
+
+
+        }
+
+
     }
-
-
-
 
 }

@@ -63,5 +63,18 @@ namespace AppServiceLayer
         }
 
 
+        [WebMethod]
+        public List<Message> GetMessages()
+        {
+            List<Message> messageList = new List<Message>();
+            DataAccess dataAccess = new DataAccess();
+
+            messageList = dataAccess.GetMessages();
+
+            return messageList;
+
+        }
+
+
     }
 }

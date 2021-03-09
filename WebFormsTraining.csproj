@@ -132,6 +132,12 @@
     <Content Include="Connected Services\ServiceReference2\WebFormsTraining.ServiceReference2.InsertResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiceReference2\WebFormsTraining.ServiceReference2.GetMessagesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference2\WebFormsTraining.ServiceReference2.Message.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServiceReference2\WebServiceDB.disco" />
     <None Include="Connected Services\ServiceReference2\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference2\configuration.svcinfo" />

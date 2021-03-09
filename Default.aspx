@@ -29,7 +29,7 @@
         <asp:DropDownList id="countryList" runat="server">
                   <asp:ListItem Value="">  </asp:ListItem>
                   <asp:ListItem Value="ENG"> ENG </asp:ListItem>
-                  <asp:ListItem Value="CZ"> CZ </asp:ListItem>
+                  <asp:ListItem Value="HUN"> HUN </asp:ListItem>
         </asp:DropDownList>
         </p>
             <br /><br />

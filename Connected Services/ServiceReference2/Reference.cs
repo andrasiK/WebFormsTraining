@@ -119,6 +119,82 @@ namespace WebFormsTraining.ServiceReference2 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Message", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Message : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int MessageIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageLanguageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageTextField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int MessageId {
+            get {
+                return this.MessageIdField;
+            }
+            set {
+                if ((this.MessageIdField.Equals(value) != true)) {
+                    this.MessageIdField = value;
+                    this.RaisePropertyChanged("MessageId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string MessageLanguage {
+            get {
+                return this.MessageLanguageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageLanguageField, value) != true)) {
+                    this.MessageLanguageField = value;
+                    this.RaisePropertyChanged("MessageLanguage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string MessageText {
+            get {
+                return this.MessageTextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageTextField, value) != true)) {
+                    this.MessageTextField = value;
+                    this.RaisePropertyChanged("MessageText");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.WebServiceDBSoap")]
     public interface WebServiceDBSoap {
@@ -143,6 +219,13 @@ namespace WebFormsTraining.ServiceReference2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Insert", ReplyAction="*")]
         System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.InsertResponse> InsertAsync(WebFormsTraining.ServiceReference2.InsertRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetMessagesResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetMessages", ReplyAction="*")]
+        WebFormsTraining.ServiceReference2.GetMessagesResponse GetMessages(WebFormsTraining.ServiceReference2.GetMessagesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetMessages", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.GetMessagesResponse> GetMessagesAsync(WebFormsTraining.ServiceReference2.GetMessagesRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -362,6 +445,67 @@ namespace WebFormsTraining.ServiceReference2 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMessagesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMessages", Namespace="http://tempuri.org/", Order=0)]
+        public WebFormsTraining.ServiceReference2.GetMessagesRequestBody Body;
+        
+        public GetMessagesRequest() {
+        }
+        
+        public GetMessagesRequest(WebFormsTraining.ServiceReference2.GetMessagesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetMessagesRequestBody {
+        
+        public GetMessagesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMessagesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMessagesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebFormsTraining.ServiceReference2.GetMessagesResponseBody Body;
+        
+        public GetMessagesResponse() {
+        }
+        
+        public GetMessagesResponse(WebFormsTraining.ServiceReference2.GetMessagesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetMessagesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebFormsTraining.ServiceReference2.Message[] GetMessagesResult;
+        
+        public GetMessagesResponseBody() {
+        }
+        
+        public GetMessagesResponseBody(WebFormsTraining.ServiceReference2.Message[] GetMessagesResult) {
+            this.GetMessagesResult = GetMessagesResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebServiceDBSoapChannel : WebFormsTraining.ServiceReference2.WebServiceDBSoap, System.ServiceModel.IClientChannel {
     }
@@ -470,6 +614,29 @@ namespace WebFormsTraining.ServiceReference2 {
             inValue.Body.accBalance = accBalance;
             inValue.Body.clientNumber = clientNumber;
             return ((WebFormsTraining.ServiceReference2.WebServiceDBSoap)(this)).InsertAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebFormsTraining.ServiceReference2.GetMessagesResponse WebFormsTraining.ServiceReference2.WebServiceDBSoap.GetMessages(WebFormsTraining.ServiceReference2.GetMessagesRequest request) {
+            return base.Channel.GetMessages(request);
+        }
+        
+        public WebFormsTraining.ServiceReference2.Message[] GetMessages() {
+            WebFormsTraining.ServiceReference2.GetMessagesRequest inValue = new WebFormsTraining.ServiceReference2.GetMessagesRequest();
+            inValue.Body = new WebFormsTraining.ServiceReference2.GetMessagesRequestBody();
+            WebFormsTraining.ServiceReference2.GetMessagesResponse retVal = ((WebFormsTraining.ServiceReference2.WebServiceDBSoap)(this)).GetMessages(inValue);
+            return retVal.Body.GetMessagesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.GetMessagesResponse> WebFormsTraining.ServiceReference2.WebServiceDBSoap.GetMessagesAsync(WebFormsTraining.ServiceReference2.GetMessagesRequest request) {
+            return base.Channel.GetMessagesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebFormsTraining.ServiceReference2.GetMessagesResponse> GetMessagesAsync() {
+            WebFormsTraining.ServiceReference2.GetMessagesRequest inValue = new WebFormsTraining.ServiceReference2.GetMessagesRequest();
+            inValue.Body = new WebFormsTraining.ServiceReference2.GetMessagesRequestBody();
+            return ((WebFormsTraining.ServiceReference2.WebServiceDBSoap)(this)).GetMessagesAsync(inValue);
         }
     }
 }
