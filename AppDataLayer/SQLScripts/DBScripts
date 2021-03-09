@@ -29,6 +29,12 @@ AccountBalance int,
 ClientNumber int FOREIGN KEY REFERENCES Client(ClientNumber)
 );
 
+CREATE TABLE Message(
+MESSAGEID int NOT NULL PRIMARY KEY,
+MESSAGELANGUAGE varchar(3),
+MESSAGETEXT varchar(1000),
+);
+
 
 Stored Procedures:
 --------------------
