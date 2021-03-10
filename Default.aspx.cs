@@ -24,6 +24,8 @@ namespace WebFormsTraining
 
             if (Page.IsValid)
             {
+                HttpContext.Current.Session["Language"] = countryList.SelectedValue;
+
                 Response.Redirect("Client.aspx?clientID=" + clientSrch.Text + "&language=" + countryList.Text);
             }
 
