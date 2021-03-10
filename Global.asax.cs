@@ -19,13 +19,17 @@ namespace WebFormsTraining
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 
-            // Load Message table data from DB to session as a 'Message' type list
-
-            List<ServiceReference2.Message> messageList = new List<ServiceReference2.Message>();
-            WebFormsTraining.ServiceReference2.WebServiceDBSoapClient webService2Db = new ServiceReference2.WebServiceDBSoapClient();
-            messageList = webService2Db.GetMessages().ToList();
-
-            this.Session["Message"] = messageList;
+ 
         }
+
+        void Session_Start(object sender, EventArgs e)
+        {
+            
+            // Load Message table data from DB to session
+
+            MessageReader reader = new MessageReader();
+            reader.GetMessagesToSession();
+        }
+
     }
 }

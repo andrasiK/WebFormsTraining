@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Account.aspx.cs" Inherits="WebFormsTraining.Account" %>
+<%@ Register Assembly="CustomControls"  Namespace="CustomControls"  TagPrefix="ccs" %>
 
 <!DOCTYPE html>
 
@@ -15,11 +16,26 @@
             <h1>Account Detail Page</h1>
         </div>
         <div id="details" style="text-align:center; margin:auto;">
-             <p>Account Number:  <asp:TextBox Id="AccNumber" runat="server"></asp:TextBox> </p>
-             <p>Account Type:    <asp:TextBox Id="AccType" runat="server"></asp:TextBox> </p>
-             <p>Account Language:<asp:TextBox Id="AccLanguage" runat="server"></asp:TextBox> </p>
-             <p>Account Balance: <asp:TextBox Id="AccBalance" runat="server"></asp:TextBox> </p>
-             <p>Client ID:       <asp:TextBox Id="ClientId" runat="server"></asp:TextBox> </p>
+             <p>
+                <ccs:CustomLabelControl1 ID="accountNumber" runat="server"></ccs:CustomLabelControl1>
+                <asp:TextBox Id="AccNumber" runat="server"></asp:TextBox>
+             </p>
+             <p>
+                 <ccs:CustomLabelControl1 ID="accountType" runat="server"></ccs:CustomLabelControl1>  
+                 <asp:TextBox Id="AccType" runat="server"></asp:TextBox> 
+             </p>
+             <p>
+                 <ccs:CustomLabelControl1 ID="accountLanguage" runat="server"></ccs:CustomLabelControl1>
+                 <asp:TextBox Id="AccLanguage" runat="server"></asp:TextBox> 
+             </p>
+             <p>
+                 <ccs:CustomLabelControl1 ID="accountBalance" runat="server"></ccs:CustomLabelControl1>
+                 <asp:TextBox Id="AccBalance" runat="server"></asp:TextBox>
+             </p>
+             <p>
+                 <ccs:CustomLabelControl1 ID="cId" runat="server"></ccs:CustomLabelControl1>
+                 <asp:TextBox Id="ClientId" runat="server"></asp:TextBox>
+             </p>
         </div>
          <div style="text-align:center; margin:auto">
              <p><asp:Button Id="createAcc"  Text="Create New Account" OnClick="CreateAcc_Click"  runat="server"></asp:Button></p>

@@ -33,6 +33,15 @@ namespace WebFormsTraining
         protected global::System.Web.UI.WebControls.TextBox User;
 
         /// <summary>
+        /// accountNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CustomControls.CustomLabelControl1 accountNumber;
+
+        /// <summary>
         /// AccNumber control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace WebFormsTraining
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox AccNumber;
+
+        /// <summary>
+        /// accountType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CustomControls.CustomLabelControl1 accountType;
 
         /// <summary>
         /// AccType control.
@@ -51,6 +69,15 @@ namespace WebFormsTraining
         protected global::System.Web.UI.WebControls.TextBox AccType;
 
         /// <summary>
+        /// accountLanguage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CustomControls.CustomLabelControl1 accountLanguage;
+
+        /// <summary>
         /// AccLanguage control.
         /// </summary>
         /// <remarks>
@@ -60,6 +87,15 @@ namespace WebFormsTraining
         protected global::System.Web.UI.WebControls.TextBox AccLanguage;
 
         /// <summary>
+        /// accountBalance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CustomControls.CustomLabelControl1 accountBalance;
+
+        /// <summary>
         /// AccBalance control.
         /// </summary>
         /// <remarks>
@@ -67,6 +103,15 @@ namespace WebFormsTraining
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox AccBalance;
+
+        /// <summary>
+        /// cId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CustomControls.CustomLabelControl1 cId;
 
         /// <summary>
         /// ClientId control.

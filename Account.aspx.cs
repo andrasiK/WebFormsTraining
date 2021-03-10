@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Threading;
-
+using CustomControls;
 
 namespace WebFormsTraining
 {
@@ -49,6 +49,15 @@ namespace WebFormsTraining
                 ClientId.Text = account[0].ClientNumber.ToString();
         
             }
+
+            // use the custom control for label
+            accountNumber.LabelText = "Account Number:";
+            accountType.LabelText = "Account Type:";
+            accountLanguage.LabelText = "Account Language";
+            accountBalance.LabelText = "Account Balance";
+            cId.LabelText = "Client Id:";
+            
+
 
             
         }

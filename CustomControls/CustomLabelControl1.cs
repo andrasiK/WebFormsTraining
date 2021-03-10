@@ -18,23 +18,24 @@ namespace CustomControls
         [Category("Appearance")]
         [DefaultValue("")]
         [Localizable(true)]
-        public string Text
+
+        private string _labelText;
+        public string LabelText
         {
             get
             {
-                String s = (String)ViewState["Text"];
-                return ((s == null) ? String.Empty : s);
+                return _labelText;
             }
 
             set
             {
-                ViewState["Text"] = value;
+                _labelText = value;
             }
         }
 
         protected override void RenderContents(HtmlTextWriter output)
         {
-            output.Write(Text);
+            output.Write(_labelText);
         }
     }
 }
