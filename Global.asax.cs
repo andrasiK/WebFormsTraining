@@ -27,7 +27,7 @@ namespace WebFormsTraining
 
             List<string> msgListString = new List<string>();
 
-            msgListString.Add("KAKA");
+            msgListString.Add("K");
 
 
 
@@ -52,8 +52,7 @@ namespace WebFormsTraining
                     msgListString.Add(msgListString[j]);
                 }
          
-              //      msgListString.Add("KAKA2");
-
+              
                     i++;
                 }
                 

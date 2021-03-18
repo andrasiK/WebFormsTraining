@@ -43,24 +43,23 @@ namespace CustomControls
             var msgList  = (List<string>)HttpContext.Current.Application["Messages"];
 
             List<Message> msgListCorrect = new List<Message>();
+            msgListCorrect.Add(new Message());
 
-            for (int i = 0; i < msgList.Count; i++)
-            {
-
-                for (int j = 0; j < msgList.Count; j++)
+            int i = 0;
+            for (int j = 0; j < (msgList.Count)-1; j++)
                 {
-                    msgListCorrect[i].MessageId   = int.Parse( msgList[j]);
-                    msgListCorrect[i].MessageLanguage = msgList[++j];
-                    msgListCorrect[i].MessageText = msgList[++j];
-                    msgListCorrect[i].CustomId = msgList[++j];
+                    msgListCorrect[i].MessageId   = int.Parse( msgList[j++]);
+                    msgListCorrect[i].MessageLanguage = msgList[j++];
+                    msgListCorrect[i].MessageText = msgList[j++];
+                    msgListCorrect[i].CustomId = msgList[j];
 
-                    j++;
+                    msgListCorrect.Add(new Message());
+                    i++;
                 }
-                msgListCorrect.Add(msgListCorrect[i]);
-                i++;
-            }
-        
-            
+
+
+
+
             foreach (var item in msgListCorrect)
             {
                 if (item.MessageLanguage == language && item.CustomId == CustomId)
@@ -69,11 +68,11 @@ namespace CustomControls
 
                     output.Write(_labelText);
                 }
-                else
+         /*       else
                 {
                     _labelText = "Error...";
                     output.Write(_labelText);
-                }
+                }*/
             }
             
         }
