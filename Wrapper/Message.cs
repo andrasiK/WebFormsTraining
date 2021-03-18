@@ -11,5 +11,6 @@ namespace Wrapper
         public int MessageId { get; set; }
         public string MessageLanguage { get; set; }
         public string MessageText { get; set; }
+        public string CustomId { get; set; }
     }
 }

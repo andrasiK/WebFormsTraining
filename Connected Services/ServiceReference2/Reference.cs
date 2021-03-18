@@ -136,6 +136,9 @@ namespace WebFormsTraining.ServiceReference2 {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MessageTextField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomIdField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -181,6 +184,19 @@ namespace WebFormsTraining.ServiceReference2 {
                 if ((object.ReferenceEquals(this.MessageTextField, value) != true)) {
                     this.MessageTextField = value;
                     this.RaisePropertyChanged("MessageText");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string CustomId {
+            get {
+                return this.CustomIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomIdField, value) != true)) {
+                    this.CustomIdField = value;
+                    this.RaisePropertyChanged("CustomId");
                 }
             }
         }

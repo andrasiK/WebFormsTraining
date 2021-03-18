@@ -79,6 +79,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="MessageId" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="MessageLanguage" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="MessageText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomId" type="s:string" />
         </s:sequence>
       </s:complexType>
     </s:schema>

@@ -188,6 +188,7 @@ namespace AppDataLayer
                         message.MessageId = Convert.ToInt32(dt.Rows[i]["MESSAGEID"]);
                         message.MessageLanguage = dt.Rows[i]["MESSAGELANGUAGE"].ToString();
                         message.MessageText = dt.Rows[i]["MESSAGETEXT"].ToString();
+                        message.CustomId = dt.Rows[i]["CUSTOMID"].ToString();
 
                         messageList.Add(message);
                     }

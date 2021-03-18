@@ -49,7 +49,7 @@ namespace WebFormsTraining
                 ClientId.Text = account[0].ClientNumber.ToString();
         
             }
-
+            /*
             // use the custom control for label
 
             var messageList = (List<ServiceReference2.Message>)Session["Message"];
@@ -102,7 +102,7 @@ namespace WebFormsTraining
               
             }
             
-            
+            */
 
 
             

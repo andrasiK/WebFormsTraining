@@ -17,23 +17,23 @@
         </div>
         <div id="details" style="text-align:center; margin:auto;">
              <p>
-                <ccs:CustomLabelControl1 ID="accountNumber" runat="server"></ccs:CustomLabelControl1>
+                <ccs:CustomLabelControl1 ID="accountNumber" runat="server" CustomId="AccNumb"></ccs:CustomLabelControl1>
                 <asp:TextBox Id="AccNumber" runat="server"></asp:TextBox>
              </p>
              <p>
-                 <ccs:CustomLabelControl1 ID="accountType" runat="server"></ccs:CustomLabelControl1>  
+                 <ccs:CustomLabelControl1 ID="accountType" runat="server" CustomId="AccTyp"></ccs:CustomLabelControl1>  
                  <asp:TextBox Id="AccType" runat="server"></asp:TextBox> 
              </p>
              <p>
-                 <ccs:CustomLabelControl1 ID="accountLanguage" runat="server"></ccs:CustomLabelControl1>
+                 <ccs:CustomLabelControl1 ID="accountLanguage" runat="server" CustomId="AccLang"></ccs:CustomLabelControl1>
                  <asp:TextBox Id="AccLanguage" runat="server"></asp:TextBox> 
              </p>
              <p>
-                 <ccs:CustomLabelControl1 ID="accountBalance" runat="server"></ccs:CustomLabelControl1>
+                 <ccs:CustomLabelControl1 ID="accountBalance" runat="server" CustomId="AccBal"></ccs:CustomLabelControl1>
                  <asp:TextBox Id="AccBalance" runat="server"></asp:TextBox>
              </p>
              <p>
-                 <ccs:CustomLabelControl1 ID="cId" runat="server"></ccs:CustomLabelControl1>
+                 <ccs:CustomLabelControl1 ID="cId" runat="server" CustomId="ClientN"></ccs:CustomLabelControl1>
                  <asp:TextBox Id="ClientId" runat="server"></asp:TextBox>
              </p>
         </div>
