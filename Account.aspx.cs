@@ -13,8 +13,12 @@ namespace WebFormsTraining
     public partial class Account : System.Web.UI.Page
     {
         string accNmb;
+
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.ClientScript.RegisterClientScriptInclude("JavaScript", ResolveUrl("~/JavaScript.js"));
+
             string userName = (string)Session["UserName"];
             User.Text = userName;
 
