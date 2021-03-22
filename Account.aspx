@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <script src="MyJavaScript.js" type="text/javascript">    
+    <script src="Scripts/MyJavaScript.js" type="text/javascript">    
 </script>
 </head>
 <body>
@@ -40,7 +40,10 @@
              </p>
         </div>
          <div style="text-align:center; margin:auto">
-             <p><asp:Button Id="createAcc"  Text="Create New Account" OnClientClick="return isAccountValid();" OnClick="CreateAcc_Click"   runat="server"></asp:Button></p>
+             <p><asp:Button Id="createAcc"  Text="Create New Account"  OnClick="CreateAcc_Click"   runat="server"></asp:Button></p>
+         </div> 
+          <div>
+             <p><asp:Button Id="JavaScriptTest"  Text="Test JavaScript" OnClientClick="return isAccountValid();"   runat="server"></asp:Button></p>
         </div>
         <div></div>
         <div></div>

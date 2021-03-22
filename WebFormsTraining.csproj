@@ -165,7 +165,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Connected Services\ServiceReference1\WebService1DbOperations.wsdl" />
-    <Content Include="MyJavaScript.js" />
+    <Content Include="Scripts\MyJavaScript.js" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Connected Services\ServiceReference2\WebServiceDB.wsdl" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />

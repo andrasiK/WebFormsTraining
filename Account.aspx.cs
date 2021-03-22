@@ -53,60 +53,12 @@ namespace WebFormsTraining
                 ClientId.Text = account[0].ClientNumber.ToString();
         
             }
-            /*
-            // use the custom control for label
-
-            var messageList = (List<ServiceReference2.Message>)Session["Message"];
-            var language =(string) Session["Language"];
-            
-            foreach (var item in messageList)
-            {
-                if (item.MessageLanguage == language )
-                {
-                    switch (item.MessageId)
-                    {
-                        case 1:
-                            accountNumber.LabelText = item.MessageText;
-                            break;
-                        case 2:
-                            accountType.LabelText = item.MessageText;
-                            break;
-                        case 3:
-                            accountLanguage.LabelText = item.MessageText;
-                            break;
-                        case 4:
-                            accountBalance.LabelText = item.MessageText;
-                            break;
-                        case 5:
-                            cId.LabelText = item.MessageText;
-                            break;
-                        case 6:
-                            accountNumber.LabelText = item.MessageText;
-                            break;
-                        case 7:
-                            accountType.LabelText = item.MessageText;
-                            break;
-                        case 8:
-                            accountLanguage.LabelText = item.MessageText;
-                            break;
-                        case 9:
-                            accountBalance.LabelText = item.MessageText;
-                            break;
-                        case 10:
-                            cId.LabelText = item.MessageText;
-                            break;
-
-                    }
-                }
                 
                 
                 
                 
                
               
-            }
-            
-            */
 
 
             
